@@ -1,0 +1,258 @@
+position = 30
+flex = 46/53
+grid = 57/64
+transform:translate = 67
+annimation = 74
+===================================================
+==========div : hover /focus
+   transition : all 2s 2s (type duration time_start)
+   visibility : hidden
+==========ul :: before/after
+   content : ""
+   border-width : 10px
+   border-style : solide
+   border-color : repeat(4,transparent)
+   position : absolute                       must use (abolute) in order to not exit parent (position:relative)
+   right : 5px
+   top :-20px
+===================================================
+Header
+=======.container
+ display : flex
+ flex-direction:row-reverse                  structre links & logo as row with rtl
+ justify-content : space-between             space between element (horizontally for rows, according to direction) only in centre(space-evenly/centre/flex-start/flex-end/stretch)
+ align-items : space between                 space between element (vertically for rows, conter direction) (space-evenly/centre/flex-start/flex-end/stretch)
+ align-content : space-between               align-content for many lines, while align-items for elements. (When there is only one line, align-content has no effect)
+ position : fixed/stiky
+   =======.logo
+   =======.links
+     position : relative                            position of element depend only to its self
+     order:1;
+     align-self:flex-end                            same concept of align-items only for child(space-evenly/centre/flex-start/flex-end/stretch)
+         =======.icon
+          display : flex
+          flex-direction : column                        with flex-wrap we get flex-flow
+          flex-wrap : wrap/wrap-reverse                  child jump if wedth > to parent
+          justify-content : space-between
+                  =======span
+                   margin-bottom : 5px
+                        =======span:first-child
+                        =======span:nth-child(2)
+                        =======span:last-child
+         =======ul
+          list-style : none
+          display : none
+          position : absolute                           position of element depend to parent if it has (position:relative), else depend to body parent
+          right : 0
+          top : calc(100% + 15px)
+          z-index : 1                                   we need to use it because of display:none
+               ======= :: before
+===================================================
+Landing
+=======.Landing 
+ background-image : url("../")
+ background-repeat : non-repeat
+ background-attachment : fixed/scroll
+ background-position : 50% 50% centre
+ background-size : cover/contain
+ position : relative                                     position of element depend only to its self or for child position:absolute
+    =======.intro-text
+    position : absolute
+    left : 50% 
+    top : 50%
+    transform : translate(-50%,-50%)
+    text-align : center
+         ======= h1
+          color : var(--main-color)
+          font-(size/weight) : 10px/bold
+         ======= p
+          color : var(--p-color)
+          font-(size/weight) : 100px
+          line-height: 1.6
+===================================================
+Featutes Section
+=======.Featutes
+ background-color : var(--section-background)
+ padding-top: var(--section-padding)
+ padding-bottom: var(--section-padding)
+   =======.container
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 20px 
+         =======.feat                                               <position : absolute> don't need it because of grig system
+          text-align : center
+               ======= i
+                color : var(--main-color)
+               ======= h3
+                color : #black
+                font-(size/weight) : 10px/bold
+               ======= p
+                color : #black
+                font-(size/weight) : 10px/bold
+===================================================
+Services
+=======.Services
+ (alredy stiling)
+   =======.container
+      =======.Special-Heading
+       text-align: center;
+         ======= h2
+          color:#ebeced;
+          font-(size/weight) : 10px/bold
+         ======= p
+          color: #797979;
+          font-(size/weight) : 10px/bold
+      =======.services-content
+       display: grid
+       grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+       grid-gap: 30px 
+         =======.col
+            ======= .srv
+             display: flex;
+               ======= i
+                color:var(--main-color);
+                flex-basis: 60px;                              basis used only if change direction flex because media mobile (hight&widht 60px)
+               ======= .text
+                flex:1
+                  ======= h3
+                   (h3 stiling alredy)
+                  ======= p
+                   color: #444;
+                   font-weight : 300
+                   line-height: 2
+            ======= .srv
+             (stiling alredy)
+         =======.col
+            ======= .srv
+             (stiling alredy)
+            ======= .srv
+             (stiling alredy)
+         =======.col
+          (stiling alredy)
+            ======= .imag
+             text-align: center
+             position: relative                            because of child befor&after absolute
+                  ======= :: before
+                   content : ""
+                   background-color : var(--secondary-color)
+                   width:80px
+                   height:calc(100%+100px)
+                   position : absolute
+                   right : 0
+                   top :-50
+                   z-index :-1
+                  ======= :: after
+===================================================
+Portefolio
+=======.Portefolio
+ (alredy stiling)
+   =======.container
+      =======.Special-Heading
+       (stiling alredy)
+         ======= h2
+          (stiling alredy)
+         ======= p
+          (stiling alredy)
+      =======.Portefolio-content
+       (alredy stiling)
+         =======.card
+          background-color: white
+            ======= imag
+             max-widht: 100%
+            =======.info
+             padding: 20px
+             text-align: center
+               ======= h3
+                (alredy stiling)
+               ======= p
+                (alredy stiling)
+         =======.card
+          (alredy stiling)
+         =======.card
+          (alredy stiling)
+===================================================
+About
+=======.About
+ (alredy stiling)
+   =======.container
+      =======.Special-Heading
+       (stiling alredy)
+         ======= h2
+          (stiling alredy)
+         ======= p
+          (stiling alredy)
+      =======.About-content
+       display: flex
+       flex-wrap: wrap
+       justify-content: space-between
+          ======= imag
+           position: relative                              because of child befor&after absolute
+           max-widht: 100%
+               ======= :: before
+                (stiling alredy)
+               ======= :: after
+                (stiling alredy)
+                border-left: 80px solide var(--main-color)
+                boder-bottom: 80px solide var(--main-color)
+          ======= text
+           flex-basis: calc(100%-500px)
+            ======= p
+             font-weight : 300
+             line-height: 2
+             margin-bottom: 50px
+            ======= hr
+             widht: 50%
+             display: inline-block
+             border-color: var(--main-color)
+            ======= p
+             line-height: 2
+             color: #777
+===================================================
+Contact
+=======.Contact
+ (alredy stiling)
+   =======.container
+      =======.Special-Heading
+       (stiling alredy)
+          ======= h2
+           (stiling alredy)
+          ======= p
+           (stiling alredy)
+          =======.info
+           padding-top: var(--section-padding)
+           padding-bottom: var(--section-padding)
+           text-align: center
+              ======= p.label
+               font-(size/weight) : 30px/800 (extrabold)
+               color: var(--secondary-color)
+               letter-spacing: -2px;
+               margin-bottom: 15px
+              =======.link
+               display: block
+               font-(size/weight) : 30px/800
+               color: var(--main-color)
+               text-decoration: none;
+              ======= .social
+               display: flex
+               justify-content: center
+               margin-top: 20px
+               font-size: 16px
+                  ======= i
+                   margien-left: 10px
+                   color: var(--secondary-color)
+                  ======= i
+                   (stiling alredy)
+                  ======= i
+                   (stiling alredy)
+===================================================
+footer
+=======.footer
+ background-color: var(---secondary-color)
+ color: white
+ padding: 30px 10px
+ text-align: center
+ font-size: 18px
+    =======.footer
+     font-size: 18px
+     color: var(--main-color)
+===================================================
