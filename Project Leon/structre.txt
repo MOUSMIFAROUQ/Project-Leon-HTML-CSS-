@@ -12,7 +12,7 @@ annimation = 74
    border-width : 10px
    border-style : solide
    border-color : repeat(4,transparent)
-   position : absolute                       must use (abolute) in order to not exit parent (position:relative)
+   position : absolute                       position of elemnt depend to his parent if is (position:relative) in order to not exit parent, else depend to body parent
    right : 5px
    top :-20px
 ===================================================
@@ -20,18 +20,18 @@ Header
 =======.container
  display : flex
  flex-direction:row-reverse                  structre links & logo as row with rtl
- justify-content : space-between             space between element (horizontally for rows, according to direction) only in centre(space-evenly/centre/flex-start/flex-end/stretch)
- align-items : space between                 space between element (vertically for rows, conter direction) (space-evenly/centre/flex-start/flex-end/stretch)
+ justify-content : space-between             space between element (horizontally for rows => according to direction) only in centre(space-evenly/centre/flex-start/flex-end/stretch)
+ align-items : space between                 space between element (vertically for rows => oposit direction) (space-evenly/centre/flex-start/flex-end/stretch)
  align-content : space-between               align-content for many lines, while align-items for elements. (When there is only one line, align-content has no effect)
  position : fixed/stiky
    =======.logo
    =======.links
-     position : relative                            position of element depend only to its self
+     position : relative                            position of element depend only to its self or for child position:absolute
      order:1;
-     align-self:flex-end                            same concept of align-items only for child(space-evenly/centre/flex-start/flex-end/stretch)
+     align-self:flex-end                            the same concept of align-items only used for child(space-evenly/centre/flex-start/flex-end/stretch)
          =======.icon
           display : flex
-          flex-direction : column                        with flex-wrap we get flex-flow
+          flex-direction : column                        flex-direction with flex-wrap we get flex-flow
           flex-wrap : wrap/wrap-reverse                  child jump if wedth > to parent
           justify-content : space-between
                   =======span
